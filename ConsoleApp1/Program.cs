@@ -15,8 +15,8 @@ namespace ConsoleApp1
         {
             airbrake = new AirbrakeNotifier(new AirbrakeConfig
             {
-                ProjectId = "275070",
-                ProjectKey = "ed8f5a013cb58213776c150c0cf7c326",
+                ProjectId = "275997",
+                ProjectKey = "fd4b429bba78c4f190a0b9b799e99cd1",
                 LogFile = "airbrake.log",
                 Environment = "dev"
             });
