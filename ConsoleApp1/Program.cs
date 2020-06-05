@@ -94,6 +94,7 @@ namespace ConsoleApp1
                 var response = airbrake.NotifyAsync(notice).Result;
                 Console.WriteLine("exception logged in airbarke dashboard");
                 Console.WriteLine("Status: {0}, Id: {1}, Url: {2}", response.Status, response.Id, response.Url);
+                //added
             }
         }
     }
