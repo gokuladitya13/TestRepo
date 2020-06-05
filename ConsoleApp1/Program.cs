@@ -29,7 +29,6 @@ namespace ConsoleApp1
             obj.CreateCustomException();
             obj.CustomExceptionWithFilter();
             Console.ReadKey();
-            //main method
         }
         void SystemException()
         {
@@ -42,12 +41,12 @@ namespace ConsoleApp1
             }
             catch (Exception ex)
             {
-             
+
                 Notice notice = airbrake.BuildNotice(ex);
                 var response = airbrake.NotifyAsync(notice).Result;
                 Console.WriteLine("exception logged in airbarke dashboard");
                 Console.WriteLine("Status: {0}, Id: {1}, Url: {2}", response.Status, response.Id, response.Url);
-               
+
             }
 
         }
@@ -83,7 +82,8 @@ namespace ConsoleApp1
                 notice.Context.User = new UserInfo();
                 notice.Context.User.Email = "test@example.com";
 
-                airbrake.AddFilter(n =>{
+                airbrake.AddFilter(n =>
+                {
                     // ignore notice if email
                     if (n.Context.User != null)
                         return null;
@@ -94,7 +94,7 @@ namespace ConsoleApp1
                 var response = airbrake.NotifyAsync(notice).Result;
                 Console.WriteLine("exception logged in airbarke dashboard");
                 Console.WriteLine("Status: {0}, Id: {1}, Url: {2}", response.Status, response.Id, response.Url);
-                
+
             }
         }
     }
